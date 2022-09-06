@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pagenotfound.jsp</location>
+    </error-page>
+    <!--Servlet Creation-->
+    <servlet>
+        <servlet-name>registerApplication</servlet-name>
+        <servlet-class>com.application.register.RegisterApplication</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>showData</servlet-name>
+        <servlet-class>com.application.register.ShowData</servlet-class>
+    </servlet>
+    <!--servlet Mapping-->
+    <servlet>
+        <servlet-name>Template</servlet-name>
+        <servlet-class>com.application.register.Template</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update</servlet-name>
+        <!--This will remove the .jsp extension inside the browser-->
+        <jsp-file>/update.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateData</servlet-name>
+        <servlet-class>com.application.register.UpdateData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete</servlet-name>
+        <!--This will remove the .jsp extension inside the browser-->
+        <jsp-file>/delete.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteData</servlet-name>
+        <servlet-class>com.application.register.DeleteData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registerApplication</servlet-name>
+        <url-pattern>/RegisterApplication</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showData</servlet-name>
+        <url-pattern>/ShowData</url-pattern>
+    </servlet-mapping>
+    
+    <!--other code's-->
+    <servlet-mapping>
+        <servlet-name>Template</servlet-name>
+        <url-pattern>/Template</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>UpdateData</servlet-name>
+        <url-pattern>/UpdateData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteData</servlet-name>
+        <url-pattern>/DeleteData</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
